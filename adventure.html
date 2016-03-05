@@ -31,7 +31,7 @@
 		if(choice=="blue")
 		if(choice2=="mars")
 //third question
-		var choice3 = prompt("On the trip to Mars, there seems to be a malfunction. The sirens are screaming in your ears.You see the control panels to your left. You think you might be able to set the ship back on course. On your right is an escape pod with an emergency kit. Which do you go for?");
+		var choice3 = prompt("On the trip to Mars, there seems to be a malfunction. The sirens are screaming in your ears.You see the control panels to your left. On your right is an escape pod with an emergency kit. Which do you go for?");
 
 		if (choice3 == "control panels"){
 //part two(a)
@@ -51,8 +51,12 @@
 				alert("You step on the gas, and quickly get to Mars just as the pod collapses.");
 			}
 			if (choice3b == "fix the wirings"){
-				alert("You fix the wirings, but by the time you finish, you've drifted so far off that you can't see of figure out how to get to Mars. Thanks for playing.");
+				alert("You fix the wirings, but by the time you finish, you've drifted so far off that you can't see or figure out how to get to Mars. Thanks for playing.");
 			}
+		}
+		if(choice3a=="press the buttons"&&choice3b=="steer the pod"){
+			var choice4 = prompt("what is your name?");
+		}
 		}
 
 		</script>
