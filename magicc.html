@@ -1,0 +1,17 @@
+<html>
+<body>
+<script>
+function checkpassword() {
+	var password = prompt("What is the password?");
+	if(password == "qwerty@@123") {
+		alert("Thank you. You may enter your the system.")
+	}
+	else {
+		alert("You have entered the incorrect password. Try again later.");
+		checkpassword();
+	}
+}
+//checkpassword();
+</script>
+</body>
+</html>

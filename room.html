@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Hello</title>
+</head>
+<body>
+<script>
+
+var hasKey = false;
+
+//ROOM 1
+
+function room1() {
+var direction1 = prompt("Welcome to your mansion. You are in a bright candlelit room. There is nothing in the room but a blue comfy chair, which you are sitting in. There is a door behind you(down), to your left, to your right, and in front of you(up). Pick one.");
+
+if(direction1 == "down"){
+        room5();
+}
+if(direction1 == "up"){
+        room3();
+}
+if(direction1 == "left"){
+        room2();
+}
+if(direction1 == "right"){
+        room4();
+}
+}
+
+
+//ROOM 2
+function room2() {
+        var direction2 = prompt("You are in a room with a huge window of the beautiful view. A flat screen is in front of you, and a couch in front of it. There are three cabinets behind the couch you're sitting on. There is a door to your right to the main room.")
+if(direction2 == "check cabinets"){
+        alert("You open all the cabinets, and in the last one, you find a slip of paper that reads: '0839'. You put it back.");
+        room2();
+}
+if(direction2 == "right"){
+        room1();
+}
+else {
+alert("You are unable to do that action.");
+room2();
+}
+}
+//ROOM 3
+function room3() {
+        var direction3 = prompt("You discover yourself in a tall room filled to the brim with bookshelves full of books. The last section of this library has just a small section of books: the first edition of Alice and Wonderland, and a collection of Shakespeare's finest classics. Behind you is the door to the main room.");
+        if(direction3 == "open books"){
+                alert("You flip throught the pages of the books, and a bronze, battered key falls from Alice and Wonderland. You pick it up, and stuff it in your pocket.");
+                hasKey=true;
+                room3();
+        }
+        if(direction3 == "down"){
+                room1();
+        }
+        else{
+                alert("You are unable to do that action.")
+                room3();
+        }
+}
+//ROOM 4
+function room4() {
+        var direction4 = prompt("This is your room. A huge bed is located nin the left corener. You see a large beanbag next to it, and a long, black desk in the right corner, with nothing but John Green books. There is a door to your left that leads to the room you were in before. ");
+        if(direction4 == "open books"){
+                alert("You sit in the beanbag, engrossed in the John Green books. You weep as you read The Fault in Our Stars. You finish the stack in a mere 3 hours, and put the books back on the table.");
+                room4();
+        }
+        if(direction4 == "left"){
+                room1();
+        }
+        else{
+                alert("You are unable to do that action.")
+                room4();
+        }
+}
+//ROOM 5
+function room5() {
+        var room5 = prompt("The walls are pastel blues and greens. There is a row of computers, on the right, and dormant printers on the left. There is a potted plant in the lower left corner, and another on in the lower right corner. There is a flowered door in front of you, and the door you came in behind you. ");
+        function unlockdoor(){
+        var keypad = prompt("The doorknob flips, and you see a keypad on the other side. What is the passcode?");
+}
+        if(room5 == "Open flowered door"){
+                alert("A key is needed.");
+        }
+        if(hasKey==true){
+                        alert("You take the key out of your pocket and unlock the door.");
+        unlockdoor();
+}
+                else {
+                        alert("Sorry, you can't open this door without a key. Try searching the other rooms.")
+                }
+
+        if(keypad == "0839"){
+                alert("You have finally opened the door. What's inside? You should know, you're controlling the game. :)");
+        }
+        else{
+                alert("Incorrect. Try searching the other rooms.")
+        }
+}
+//ROOM 6
+
+room1();
+</script>
+</body>
+</html>
