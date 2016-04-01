@@ -1,0 +1,75 @@
+<html>
+	<body>
+	<label for="box">Verb in past tense: </label>
+	<input type="text" id="box"></input></br>
+	<label for"box1">First name: </label>
+	<input type="text" id="box1"></input></br>
+	<label for"box2">Last name: </label>
+	<input type="text" id="box2"></input></br>
+	<label for"box3">Adjective: </label>
+	<input type="text" id="box3"></input></br>
+	<label for"box4">Noun: </label>
+	<input type="text" id="box4"></input></br>
+	<label for"box5">Number: </label>
+	<input type="text" id="box5"></input></br>
+	<label for"box6">Singular Noun: </label>
+	<input type="text" id="box6"></input></br>
+	<label for"box7">Singular Noun: </label>
+	<input type="text" id="box7"></input></br>
+	</br>
+	<button onclick=madlib();>FINISH</button>
+<script> 	
+		function madlib() {
+			//find the textbox
+			var stringInput = document.getElementById("box");
+			//take out text
+			var firstBox = stringInput.value;
+			var mySpan = document.getElementById("verb");
+			mySpan.textContent = firstBox;
+
+						//find the textbox
+			var stringInput = document.getElementById("box1");
+			//take out text
+			var secondBox = stringInput.value;
+			var mySpan = document.getElementById("firstName");
+			mySpan.textContent = secondBox;
+
+						//find the textbox
+			var stringInput = document.getElementById("box2");
+			//take out text
+			var thirdBox = stringInput.value;
+			var mySpan = document.getElementById("lastName");
+			mySpan.textContent = thirdBox;
+
+			var stringInput = document.getElementById("box3");
+			var fourthBox = stringInput.value;
+			var mySpan = document.getElementById("adjective");
+			mySpan.textContent = fourthBox;
+
+
+			var stringInput = document.getElementById("box4");
+			var fifthBox = stringInput.value;
+			var mySpan = document.getElementById("number");
+			mySpan.textContent = fifthBox;
+
+			var stringInput = document.getElementById("box5");
+			var sixthBox = stringInput.value;
+			var mySpan = document.getElementById("noun");
+			mySpan.textContent = sixthBox;
+
+			var stringInput = document.getElementById("box6");
+			var seventhBox = stringInput.value;
+			var mySpan = document.getElementById("singnoun");
+			mySpan.textContent = seventhBox;
+
+			var stringInput = document.getElementById("box7");
+			var eighthBox = stringInput.value;
+			var mySpan = document.getElementById("singnoun");
+			mySpan.textContent = eighthBox;
+}
+		</script>
+
+The Boy Who <span id="verb"></span>, also known as <span id="firstName"></span> <span id="lastName"></span>, is one of the most <span id= "adjective"></span> characters of all time. This <span id= "number"></span> book series, by J.K Rowling, reveals the <span id= "noun"></span> of this <span id= "singnoun"></span> who is an orphaned wizard who was the first to survive a killing curse.
+
+	</body>
+</html>
