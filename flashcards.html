@@ -2,32 +2,45 @@
   <head>
     <style>
       body {
-        font-family: Helvetica;
+        font-family: Verdana;
         text-align: center;
       }
       #card {
         width: 500px;
         padding: 120px 0;
         margin: 50px auto;
-        border: 5px solid darkseagreen;
+        border: 5px solid blue;
         border-radius: 5px;
         font-size: 18px;
           </style>
   </head>
   <body>
-  <script>
-  var problems = ["14+6"];
-  var solutions = ["20"];
-  function answer (){
-    if(findAnswer == solutions) {
-"Correct!"
-  }
-        var findAnswer = document.getElementById("card");
-    var card = document.getElementById("card");
-  card.textContext = "14+6";
-  </script>
     <div id="card"></div>
     <input type="text" id="answer"/>
     <button onclick="answer();">Answer</button>
+
+      <script>
+      currentFlashcard();
+  var questions = ["Name the punctuation used in this sentence.","What letter stands for irrational?","What country is Montreal in?"];
+  var answers = ["period","i"];
+  function checkAnswer() {
+    var correctAnswer = answers[currentFlashcard];
+    var usersInput = document.getElementById("answer");
+    var usersAnswer = usersInput.value;
+    if(answers==usersAnswer) {
+      alert(":)");
+    }
+  }
+function showNextflashcard() {
+if (currentFlashcard < questions.length - 1) {
+  currentFlashcard = currentFlashcard + 1;
+}
+  function currentFlashcard() {
+    var cardDiv = document.getElementById("card");
+    var question = questions[currentFlashcard];
+    cardDiv.textContent = questions;
+
+  }
+  </script>
   </body>
 </html>
