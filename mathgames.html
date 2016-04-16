@@ -1,0 +1,38 @@
+<html>
+	<head>
+	<title> Math Jump</title>
+	<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+</head>
+	<body>
+`<script>
+
+function gameStart() {
+Crafty.init();
+var player = Crafty.e("Player, 2D, DOM, Color, Twoway, Gravity, Solid, Collision");
+player.attr({x: 30, y: 300, w: 20, h: 20});
+player.color("0000FF");
+player.twoway();
+player.gravity("Floor");
+
+var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+floor.attr({x: 10, y: 400, w: 50, h: 7});
+floor.color("green");
+
+var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+floor.attr({x: 100, y: 450, w: 50, h: 7});
+floor.color("green");
+var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+floor.attr({x: 170, y: 490, w: 50, h: 7});
+floor.color("green");
+var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+floor.attr({x: 240, y: 360, w: 50, h: 7});
+floor.color("green");
+}
+
+
+window.onload = gameStart;
+
+
+</script>
+</body>
+</html>
