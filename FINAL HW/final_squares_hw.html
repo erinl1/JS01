@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <title>Craftyy</title>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+  </head>
+  <body background="https://i.ytimg.com/vi/PpCkQwCKHMI/maxresdefault.jpg">
+    <script>
+    //win game
+    var player;
+    var floor;
+    var goal;
+    var blackline;
+    var coin;
+    var pointscore = 0;
+
+        function collectCoin() {
+        coin.destroy();
+        pointscore = pointscore + 1;
+    }
+        function collectCoin2() {
+        coin2.destroy();
+        pointscore = pointscore + 1;
+    }
+        function collectCoin3() {
+        coin3.destroy();
+        pointscore = pointscore + 1;
+    }
+        function collectCoin4() {
+        coin4.destroy();
+        pointscore = pointscore + 1;
+    }
+
+          function hit() {
+        alert("You Win! || " + pointscore + "/4 ||");
+        restart();
+      }
+      function restart() {
+        player.attr({x: 20, y: 100, w: 70, h: 65});
+      }
+      //play game
+      function start() {
+        Crafty.init();
+        //player
+        player = Crafty.e("Player, 2D, DOM, Twoway, Image, Gravity, Solid, Collision").image("monkey.png");
+        player.attr({x: 20, y: 100, w: 70, h: 70});
+        player.image("monkey.png");
+        player.twoway();
+        player.gravity("Floor","Goal");
+        floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 0, y: 300, w: 80, h: 10});
+        floor.color("FFFAFA");
+        floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+        floor.attr({x: 220, y: 350, w: 80, h: 10});
+        floor.color("F0FFF0");
+        floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 400, y: 400, w: 80, h: 10});
+        floor.color("F5FFFA");
+        floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 540, y: 280, w: 80, h: 10});
+        floor.color("F0FFFF");
+        floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 740, y: 320, w: 80, h: 10});
+        floor.color("F0F8FF");
+        floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 920, y: 235, w: 80, h: 10});
+        floor.color("F8F8FF");
+        floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 1100, y: 320, w: 80, h: 10});
+        floor.color("FFF5EE");
+
+        floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 1350, y: 330, w: 80, h: 10});
+        floor.color("F0FFF0"); 
+
+        floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+        floor.attr({x: 1530, y: 220, w: 80, h: 10});
+        floor.color("ADDFFF");
+
+        goal = Crafty.e("Goal, 2D, DOM, Color, Solid, Collision");
+        goal.attr({x: 1670, y: 370, w: 80, h: 10});
+        goal.color("FFF0F5");
+        goal.onHit("Player", hit, restart);
+
+        point = Crafty.e("Point, 2D, DOM, Color, Solid, Collision");
+        point.attr({x: 1670, y: 369, w:80, h:1});
+        point.color("white");
+        point.onHit("Player", hit);
+
+        coin = Crafty.e("Coin, 2D, DOM, Image, Twoway, Solid, Collision").image("spinningcoin.png");
+        coin.attr({x:230, y:290, w:64, h:64});
+        coin.image("spinningcoin.png");
+        coin.onHit("Player", collectCoin);
+        coin2 = Crafty.e("Coin, 2D, DOM, Image, Twoway, Solid, Collision").image("spinningcoin.png");
+        coin2.attr({x:550, y:220, w:64, h:64});
+        coin2.image("spinningcoin.png");
+        coin2.onHit("Player", collectCoin2);
+        coin3 = Crafty.e("Coin, 2D, DOM, Image, Twoway, Solid, Collision").image("spinningcoin.png");
+        coin3.attr({x:930, y:175, w:64, h:64});
+        coin3.image("spinningcoin.png");
+        coin3.onHit("Player", collectCoin3);
+        coin4 = Crafty.e("Coin, 2D, DOM, Image, Twoway, Solid, Collision").image("spinningcoin.png");
+        coin4.attr({x:1360, y:270, w:64, h:64});
+        coin4.image("spinningcoin.png");
+        coin4.onHit("Player", collectCoin4);
+
+
+        blackline = Crafty.e("Blackline, 2D, DOM, Solid, Collision");
+        blackline.attr({x:0, y:800, w:3000, h: 10});
+        blackline.onHit("Player", restart);      
+
+      }
+      window.onload = start;      
+    </script>
+  </body>
+</html>
