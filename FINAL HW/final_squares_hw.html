@@ -70,7 +70,7 @@
 
         floor = Crafty.e("Floor, 2D, DOM, Color");
         floor.attr({x: 1350, y: 330, w: 80, h: 10});
-        floor.color("F0FFF0"); 
+        floor.color("F0FFF0");
 
         floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
         floor.attr({x: 1530, y: 220, w: 80, h: 10});
@@ -106,10 +106,10 @@
 
         blackline = Crafty.e("Blackline, 2D, DOM, Solid, Collision");
         blackline.attr({x:0, y:800, w:3000, h: 10});
-        blackline.onHit("Player", restart);      
+        blackline.onHit("Player", restart);
 
       }
-      window.onload = start;      
+      window.onload = start;
     </script>
   </body>
 </html>
