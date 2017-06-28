@@ -1,51 +1,41 @@
 <html>
-	<head>
-	<title> Math Jump</title>
-	<script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+<head>
+  <title> Math Jump</title>
+  <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 </head>
-	<body>
-`<script>
-
-var player;
-
-function gameInitialize() {
-	Crafty.init();
-
-	player = Crafty.e("Player, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("vader.png");
-	player.attr({x: 30, y: 300, w: 20, h: 20});
-player.image("vader.png");
-	player.twoway();
-	player.gravity("Floor");
-
-	var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
-	floor.attr({x: 10, y: 400, w: 50, h: 7});
-	floor.color("green");
-
-	var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
-	floor.attr({x: 100, y: 450, w: 50, h: 7});
-	floor.color("green");
-	var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
-	floor.attr({x: 170, y: 490, w: 50, h: 7});
-	floor.color("green");
-	var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
-	floor.attr({x: 240, y: 360, w: 50, h: 7});
-	floor.color("green");
-
-	var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
-	goal.attr({x:0, y: 500, w:1000, h: 2});
-	goal.color("black");
-	goal.onHit("Player", restartGame);
-}
-
-function restartGame() {
-	// player.attr({x: 0, y: 0});
-	player.attr({x: 30, y: 300, w: 20, h: 20});
-}
-
-
-window.onload = gameInitialize;
-
-
-</script>
+<body>
+  <script>
+  var player;
+  function gameInitialize() {
+    Crafty.init();
+    player = Crafty.e("Player, 2D, DOM, Image, Twoway, Gravity, Solid, Collision").image("vader.png");
+    player.attr({x: 30, y: 300, w: 20, h: 20});
+    player.image("vader.png");
+    player.twoway();
+    player.gravity("Floor");
+    var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+    floor.attr({x: 10, y: 400, w: 50, h: 7});
+    floor.color("green");
+    var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+    floor.attr({x: 100, y: 450, w: 50, h: 7});
+    floor.color("green");
+    var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+    floor.attr({x: 170, y: 490, w: 50, h: 7});
+    floor.color("green");
+    var floor = Crafty.e("Floor, 2D, DOM, Color, Solid, Collision");
+    floor.attr({x: 240, y: 360, w: 50, h: 7});
+    floor.color("green");
+    var goal = Crafty.e("Goal, 2D, Color, DOM, Solid, Collision");
+    goal.attr({x:0, y: 500, w:1000, h: 2});
+    goal.color("black");
+    goal.onHit("Player", restartGame);
+  }
+  
+  function restartGame() {
+    // player.attr({x: 0, y: 0});
+    player.attr({x: 30, y: 300, w: 20, h: 20});
+  }
+  window.onload = gameInitialize;
+  </script>
 </body>
 </html>
